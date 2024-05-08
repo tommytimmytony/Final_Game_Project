@@ -364,6 +364,8 @@ MonoBehaviour:
   finalClouds: {fileID: 569778887}
   bigClouds: {fileID: 1189687561}
   octopusSpawner: {fileID: 1549130309}
+  musicBox: {fileID: 192166891}
+  spawner: {fileID: 910357287}
 --- !u!4 &185392448
 Transform:
   m_ObjectHideFlags: 0
@@ -389,6 +391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 192166890}
   - component: {fileID: 192166889}
+  - component: {fileID: 192166891}
   m_Layer: 0
   m_Name: MusicBox
   m_TagString: Untagged
@@ -507,6 +510,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &192166891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192166888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec3690caeb8d8cb4c98a6f990dea1fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossFight: {fileID: 8300000, guid: 6b06d4bc6bd75904583033049c48fa41, type: 3}
 --- !u!1 &196691468
 GameObject:
   m_ObjectHideFlags: 0
@@ -2470,7 +2486,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3f8cd89161afa2c4889d88a98bea8a1c, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -8126,7 +8142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3362045923768875266, guid: c6a8925d2bf539c4ea146cc67f4d0851, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.04537873
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3362045923768875266, guid: c6a8925d2bf539c4ea146cc67f4d0851, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8176,6 +8192,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 795502952}
+    - target: {fileID: 8250401164203378747, guid: c6a8925d2bf539c4ea146cc67f4d0851, type: 3}
+      propertyPath: victory
+      value: 
+      objectReference: {fileID: 8300000, guid: adaff77e69fb8f84ea16c7c920ad3c32, type: 3}
     - target: {fileID: 8250401164203378747, guid: c6a8925d2bf539c4ea146cc67f4d0851, type: 3}
       propertyPath: bossHurt
       value: 

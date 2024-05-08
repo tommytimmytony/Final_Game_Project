@@ -50,7 +50,7 @@ public class Boss : MonoBehaviour
         AttackPlayer();
     }
 
-     void Update()
+    void Update()
     {
         if (!bossLanded && rb.position.x <= 5.7)
         {
