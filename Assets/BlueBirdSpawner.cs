@@ -7,7 +7,7 @@ public class BlueBirdSpawner : MonoBehaviour
     [SerializeField] private GameObject blueBirdPrefab;
     [SerializeField] private float spawnRange = 5f;
     [SerializeField] private float speed = 10f;
-    [SerializeField] private float spawnSpeed = 5f;
+    [SerializeField] private float spawnSpeed = 10f;
     [SerializeField] Creature player;
 
     void Start()

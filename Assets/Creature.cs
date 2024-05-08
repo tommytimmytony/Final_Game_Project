@@ -12,7 +12,7 @@ public class Creature : MonoBehaviour
     [Header("Stats")]
     [SerializeField] int health;
     [SerializeField] float speed;
-    [SerializeField] float jumpForce = 10;
+    [SerializeField] float jumpForce = 1;
 
     public enum CreatureMovementType {tf, physics};
     [SerializeField] CreatureMovementType movementType = CreatureMovementType.physics;
@@ -21,8 +21,8 @@ public class Creature : MonoBehaviour
 
     [Header("Physics")]
     [SerializeField] LayerMask groundMask;
-    [SerializeField] float jumpOffset = -.5f;
-    [SerializeField] float jumpRadius = .25f;
+    [SerializeField] float jumpOffset = -1f;
+    [SerializeField] float jumpRadius = .5f;
 
     [Header("Flavor")]
     [SerializeField] string creatureName = "Bob";
@@ -35,17 +35,17 @@ public class Creature : MonoBehaviour
 
     [SerializeField] Rigidbody2D rb;
 
-    void Awake() {
-        // rb = GetComponent<Rigidbody2D>();
-    }
-
     void Start()
     {
         Debug.Log("Start");
         hitPointText.text = "HP." + health.ToString();
     }
 
-    void Update() {}
+    void Update() {
+        if (transform.position.y < -10) {
+            BackToMainMenu();
+        } 
+    }
 
     public void MoveCreature(Vector3 direction) {
         if (movementType == CreatureMovementType.tf) {
@@ -103,12 +103,15 @@ public class Creature : MonoBehaviour
                 asc.ChangeAnimationState("Hurt");
         }
         health -= 1;
+        GetComponent<AudioSource>().Play();
         if (health <= 0) {
              foreach(AnimationStateChanger asc in animationStateChangers){
                 asc.ChangeAnimationState("Death", 10, BackToMainMenu, 1);
             }
         } 
-        hitPointText.text = "HP." + health.ToString();
+        if (health >= 0) {
+            hitPointText.text = "HP." + health.ToString();
+        }
     }
 
     private void BackToMainMenu()
@@ -118,10 +121,7 @@ public class Creature : MonoBehaviour
 
     public void ActivatePowerup()
     {
-        Debug.Log(GetComponentInChildren<SpriteRenderer>().color );
-        // Change the color to the powerup color
         GetComponentInChildren<SpriteRenderer>().color = new Color(1f, 0.5f, 0.5f);
-        // Start the coroutine to revert the color after 10 seconds
         StartCoroutine(RevertColorAfterDelay(8f));
     }
 

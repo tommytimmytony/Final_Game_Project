@@ -6,7 +6,7 @@ public class VultureSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject vulturePrefab;
     [SerializeField] private float spawnRange = 5f;
-    [SerializeField] private float spawnRate = 5f;
+    [SerializeField] private float spawnRate = 10f;
     [SerializeField] private float birdSpeed = 5f;
     void Start()
     {

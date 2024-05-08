@@ -18,8 +18,8 @@ public class PowerupSpawner : MonoBehaviour
 
         IEnumerator SpawnPowerUpsRoutine() {
             while (true) {
-                // float randRate = Random.Range(0, spawnRate);
-                yield return new WaitForSeconds(spawnRate);
+                float randRate = Random.Range(0, spawnRate);
+                yield return new WaitForSeconds(randRate);
                 SpawnPowerUpRandom();
             }
         }
@@ -29,6 +29,6 @@ public class PowerupSpawner : MonoBehaviour
         float randX = Random.Range(-spawnRange, spawnRange);
         GameObject newObject = Instantiate(powerupPrefab, new Vector3(randX,5), Quaternion.identity);
 
-        Destroy(newObject, 7);  
+        Destroy(newObject, 15);  
     }
 }

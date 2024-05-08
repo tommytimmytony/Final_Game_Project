@@ -7,13 +7,11 @@ public class PigeonSpawner : MonoBehaviour
     [SerializeField] private GameObject pigeonPrefab;
     [SerializeField] private float spawnRange = 5f;
     [SerializeField] private float speed = 10f;
-    [SerializeField] private float spawnRate = 5f;
+    [SerializeField] private float spawnRate = 10f;
     void Start()
     {
         SpawnBirds();
     }
-
-    void Update() {}
 
     void SpawnBirds(){
         StartCoroutine(SpawnBirdsRoutine());

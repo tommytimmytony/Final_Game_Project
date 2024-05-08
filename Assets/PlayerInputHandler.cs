@@ -41,10 +41,12 @@ public class PlayerInputHandler : MonoBehaviour
             player.Jump();
         }
         
-        if (Input.GetKeyDown(KeyCode.E)) {
-            projectileThrower.Launch(player.body.transform.localScale.x);
+        if (Input.GetKeyDown(KeyCode.P)) {
+            if (Input.GetKey(KeyCode.W)) {projectileThrower.LaunchUp();}
+            else if (Input.GetKey(KeyCode.S)) { projectileThrower.LaunchDown();}
+            else {  projectileThrower.Launch(player.body.transform.localScale.x);}
         }
-      
+        
         player.MoveCreature(input);
     }
 

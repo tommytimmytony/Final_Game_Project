@@ -10,6 +10,7 @@ public class AnimationStateChanger : MonoBehaviour
     void StopGame() {
         Time.timeScale = 0;
     }
+    
     public void ChangeAnimationState(string newState, float speed = 1, System.Action callback = null, float extraDelayTime = 0)
     {
         animator.speed = speed;

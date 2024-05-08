@@ -47,3 +47,6 @@ TagManager:
   - name: Projectile
     uniqueID: 1490149213
     locked: 0
+  - name: Cloud
+    uniqueID: 3935749375
+    locked: 0

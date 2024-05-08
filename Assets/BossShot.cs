@@ -16,6 +16,8 @@ public class BossShot : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             other.GetComponent<Creature>().PlayerHurt();
             asc.ChangeAnimationState("Impact", 2, DestroyAfterAnimation, 0.2f);
+        } else if (other.GetComponent<PowerShot>() != null) {
+            DestroyAfterAnimation();
         }
     }
 

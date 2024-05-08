@@ -16,6 +16,7 @@ public class Vulture : MonoBehaviour
             asc.ChangeAnimationState("Hurt", 1, DestroyAfterAnimation, 0.2f);
         } else if (other.GetComponent<Creature>() != null){
             other.GetComponent<Creature>().GetComponent<Rigidbody2D>().AddForce(Vector3.up * forceApplied, ForceMode2D.Impulse);
+            GetComponent<AudioSource>().Play();
         }
     }
 
